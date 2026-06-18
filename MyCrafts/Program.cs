@@ -1,0 +1,33 @@
+using MyCrafts.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Registrar Controllers
+builder.Services.AddControllers();
+
+// Registrar dependencias
+builder.Services.AddScoped<ManualidadService>();
+
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+
+// Para servir index.html automáticamente
+app.UseDefaultFiles();
+
+// Para servir CSS, JS e imágenes
+app.UseStaticFiles();
+
+app.UseRouting();
+
+// Mapear Controllers
+app.MapControllers();
+
+app.MapGet("/api/manualidades",
+
+(ManualidadService servicio) =>
+{
+    return Results.Ok(servicio.Obtener());
+});
+
+app.Run();
