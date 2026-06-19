@@ -6,7 +6,7 @@ namespace MyCrafts.Services;
 
 public class ManualidadService
 {
-    public bool Guardar(ManualidadRequest manualidad)
+    public string Guardar(ManualidadRequest manualidad)
     {
         try
         {
@@ -32,11 +32,11 @@ public class ManualidadService
             )";
 
             var resGuarda = conexion.SqlQuerySingle(sql);
-            return resGuarda == "si";
+            return resGuarda;
         }
-        catch
+        catch (Exception ex)
         {
-            return false;
+            return ex.Message;
         }
     }
 

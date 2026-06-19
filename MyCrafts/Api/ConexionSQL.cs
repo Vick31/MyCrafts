@@ -24,9 +24,9 @@ public class ConexionSql : IDisposable
         string? usuario,
         string? contraseña)
     {
-        //servidor ??= @"26.230.244.240\crafts";
-        servidor ??= @"dev-manuel\samit";
-        baseDeDatos ??= "crafts";
+        servidor ??= @"LOCALHOST\CRAFTS";
+        //servidor ??= @"dev-manuel\samit";
+        baseDeDatos ??= "CRAFTS";
         usuario ??= "sa";
         contraseña ??= "2121121512";
 

@@ -20,11 +20,11 @@ public class ManualidadesController : ControllerBase
     {
         try
         {
-            bool ok = _service.Guardar(request);
+            string ok = _service.Guardar(request);
 
-            if (!ok)
+            if (ok != "si")
             {
-                return BadRequest("No fue posible guardar.");
+                return BadRequest(ok);
             }
 
             return Ok("Guardado correctamente.");
