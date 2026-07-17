@@ -40,17 +40,19 @@ public class ManualidadService
         }
     }
 
-    public List<Manualidad>? Obtener()
+    public List<Manualidad>? Obtener(int? cantidad = null)
     {
         using var conexion = new ConexionSql();
 
-        var comando = "Select * from Manualidades for json path";
+        // Si se indica una cantidad, solo se traen las mas recientes (ej: las ultimas 4)
+        var top = (cantidad.HasValue && cantidad.Value > 0)
+            ? $"TOP ({cantidad.Value}) "
+            : "";
 
-        if (comando == null)
-            return [];
+        var comando = $"SELECT {top}* FROM Manualidades ORDER BY FechaCreacion DESC, Id DESC FOR JSON PATH";
 
         var resComando = conexion.SqlJson(comando);
         var datos = JsonConvert.DeserializeObject<List<Manualidad>>(resComando);
-        return datos;
+        return datos ?? [];
     }
 }

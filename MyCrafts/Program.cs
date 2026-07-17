@@ -12,10 +12,10 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-// Para servir index.html automáticamente
+// Para servir index.html automï¿½ticamente
 app.UseDefaultFiles();
 
-// Para servir CSS, JS e imágenes
+// Para servir CSS, JS e imï¿½genes
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -25,9 +25,9 @@ app.MapControllers();
 
 app.MapGet("/api/manualidades",
 
-(ManualidadService servicio) =>
+(ManualidadService servicio, int? cantidad) =>
 {
-    return Results.Ok(servicio.Obtener());
+    return Results.Ok(servicio.Obtener(cantidad));
 });
 
 app.Run();

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Galería completa - Mis Manualidades</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <script src="/js/site.js"></script>
+</head>
+
+<body>
+
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="logo">
+
+                <a href="/" class="logo-link">🧶 Mis Creaciones</a>
+
+            </div>
+
+            <input type="checkbox" id="menu-toggle">
+
+            <button id="btnTema" class="tema-btn" type="button" aria-label="Cambiar tema">🌙</button>
+
+            <label for="menu-toggle" class="menu-icon">
+
+                ☰
+
+            </label>
+
+            <nav>
+
+                <a href="/#inicio">Inicio</a>
+
+                <a href="/galeria.html">Galería</a>
+
+                <a href="/#blog">Blog</a>
+
+                <a href="/#sobre-mi">Sobre mí</a>
+
+                <a href="/#contacto">Contacto</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <section id="galeria">
+
+        <div class="container">
+
+            <h2 class="titulo">
+
+                Galería completa
+
+            </h2>
+
+            <div class="galeria" id="contenedorGaleria"> </div>
+
+            <div class="cargando" id="cargando">
+                <div class="spinner"></div>
+                <p>Cargando manualidades...</p>
+            </div>
+
+            <div class="ver-mas">
+
+                <a class="btn btn-outline" href="/#inicio">
+
+                    ← Volver al inicio
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MODAL DETALLE -->
+    <div class="modal" id="modal">
+
+        <span class="modal-cerrar" id="modalCerrar">&times;</span>
+
+        <div class="modal-contenido">
+
+            <div class="modal-imagen">
+                <img id="modalImg" src="" alt="">
+            </div>
+
+            <div class="modal-info">
+                <span class="categoria" id="modalCategoria"></span>
+                <h2 id="modalTitulo"></h2>
+                <p class="modal-fecha" id="modalFecha"></p>
+                <p id="modalDescripcion"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

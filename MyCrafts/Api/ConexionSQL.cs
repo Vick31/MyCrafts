@@ -24,8 +24,11 @@ public class ConexionSql : IDisposable
         string? usuario,
         string? contraseña)
     {
+#if DEBUG
+        servidor ??= @"dev-manuel\samit";
+#else
         servidor ??= @"LOCALHOST\CRAFTS";
-        //servidor ??= @"dev-manuel\samit";
+#endif
         baseDeDatos ??= "CRAFTS";
         usuario ??= "sa";
         contraseña ??= "2121121512";
